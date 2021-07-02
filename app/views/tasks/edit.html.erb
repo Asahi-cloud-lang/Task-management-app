@@ -1,0 +1,20 @@
+<div class="task-new">
+  <h1 class="form-heading">タスク編集</h1>
+    <%= form_tag task_update_path, method: :post do %>
+      <div class="form">
+        <div class="form-body">
+          <% @task.errors.full_messages.each do |message| %>
+           <div class="form-error"><%= message %></div>
+          <% end %>
+          <p>名称</p>
+          <input name="work" class="work-form" value="<%= @task.work %>" > 
+          <p>詳細</p>
+          <textarea name="detail" class="detail-form"><%= @task.detail %></textarea>
+          <div>
+            <input type="submit" value="更新" class="task_edit_button2">
+            <button class="task_edit_cancel_button"><%= link_to "キャンセル", task_index_path(@task.user_id) %></button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

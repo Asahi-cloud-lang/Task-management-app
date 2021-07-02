@@ -1,0 +1,19 @@
+<div class="task-new">
+  <h1 class="form-heading">新規投稿</h1>
+    <%= form_tag task_create_path do %>
+      <div class="form">
+        <div class="form-body">
+          <% @task.errors.full_messages.each do |message| %>
+           <div class="form-error"><%= message %></div>
+          <% end %>
+          <p>名称</p>
+          <input name="work" class="work-form">
+          <p>詳細</p>
+          <textarea name="detail" class="detail-form"></textarea>
+          <div>
+            <input type="submit" value="新規作成" class="task_new_button2">
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

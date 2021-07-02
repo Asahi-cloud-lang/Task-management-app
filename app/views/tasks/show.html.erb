@@ -1,0 +1,23 @@
+<div> 
+  <table class="table table-margin table-frame">
+    <tr> 
+      <th class="table-list">ID</th><td><%= @task.id %></td>
+    </tr>
+    <tr>
+      <th class="table-list">名称</th><td><%= @task.work %></td> 
+    </tr>
+    <tr>
+      <th class="table-list">詳細</th><td><%= convert_url_into_a_tag(@task.detail).html_safe %></td>
+    </tr>
+    <tr>
+      <th class="table-list">作成日</th><td><%= l(@task.created_at, format: :default) %></td>
+    </tr>
+    <tr>
+      <th class="table-list">更新日</th><td><%= l(@task.updated_at, format: :default) %></td>
+    </tr>
+  </table>
+  <p class="task-show-margin">
+    <%= link_to "編集", task_edit_path(@task.user_id, @task.id), class: "task_edit_button" %>
+    <%= link_to "削除", task_destroy_path(@task.user_id, @task.id), method: :delete, class: "task_delete_button" %>
+  </p>
+</div>

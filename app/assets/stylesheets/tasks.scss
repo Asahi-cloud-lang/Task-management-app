@@ -1,0 +1,232 @@
+.task_table {
+  width: 100%;
+}
+
+.table_padding {
+  padding: 10px;
+}
+
+.table_underline_middle {
+  border-bottom: 2px solid #C0C0C0;
+}
+
+.table_underline {
+  border-bottom: 1px solid #C0C0C0;
+}
+
+.table_title {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.table_padding {
+  padding: 10px;
+}
+
+.task_new_button a {
+  color: #fff;
+  text-decoration:none; 
+}
+
+.task_new_button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  float: right;
+}
+
+.form-body div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.task_new_button2 {
+  display: block;
+  margin-bottom: 0;
+  height: 50px;
+  width: 20%;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.task_edit_button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  margin: 10px 2px;
+}
+
+.task_edit_button2 {
+  display: inline-block;
+  margin-bottom: 0;
+  height: 50px;
+  width: 20%;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.task_edit_cancel_button {
+  display: inline-block;
+  margin-bottom: 0;
+  height: 50px;
+  width: 20%;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  background-color: #C0C0C0;
+  border-color: #808080;
+}
+
+.task_edit_cancel_button a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.task_delete_button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  margin: 10px 2px;
+}
+
+.work-form {
+  margin: 5px auto 20px;
+  display: block;
+  width: 80%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.detail-form {
+  margin: 5px auto 40px;
+  display: block;
+  width: 80%;
+  height: 200px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-body p{
+  width: 80%;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.table-margin {
+  margin: 100px 100px 0px;
+  width: 70%;
+}
+
+.table-frame {
+  border: 1px solid #ddd;
+}
+
+.table-list {
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.task-show-margin {
+  margin: 0 100px;
+}
+
+.form-error {
+  color: red;
+  padding: 5px;
+}

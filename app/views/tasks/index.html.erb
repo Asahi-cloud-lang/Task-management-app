@@ -1,0 +1,23 @@
+<h1>管理者のタスク一覧</h1>
+<div>
+  <button class="task_new_button right_position"><%= link_to "タスク新規作成", task_new_path(current_user.id) %></button>
+</div>
+
+<table class="task_table">
+  <tr class="table_underline_middle">
+    <td class="table_title">名称</td>
+    <td class="table_title">作成日</td>
+    <td></td>
+  </tr>
+  
+  <% @tasks.each do |task| %>
+  <tr class="table_underline">
+    <td class="table_padding"><%= link_to task.work, task_show_path(task.user_id, task.id) %></td>
+    <td class="table_padding"><%= l(task.updated_at, format: :default) %></td>
+    <td>
+      <%= link_to "編集", task_edit_path(task.user_id, task.id), class: "task_edit_button" %>
+      <%= link_to "削除", task_destroy_path(task.user_id, task.id), method: :delete, class: "task_delete_button" %>
+    </td>
+  </tr>  
+  <% end %>
+</table>
