@@ -1,4 +1,5 @@
-<h1>管理者のタスク一覧</h1>
+<% provide(:title, "task index") %>
+h1>管理者のタスク一覧</h1>
 <div>
   <button class="task_new_button right_position"><%= link_to "タスク新規作成", task_new_path(current_user.id) %></button>
 </div>
