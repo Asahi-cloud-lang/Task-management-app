@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   before_action :admin_or_correct_user, only: [:edit, :update, :show]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 20)
+    @current_user = User.find(session[:user_id])
+    if @current_user.admin?
+      @users = User.paginate(page: params[:page], per_page: 20)
+    else
+      redirect_to(root_url)
+      flash[:danger] = "権限がありません。"
+    end
   end
 
   def edit
@@ -17,6 +23,13 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @current_user = User.find(session[:user_id])
+    unless @current_user.admin?
+      if logged_in?
+        redirect_to user_path(current_user.id)
+        flash[:success] = "すでにログイン済です。"
+      end
+    end
   end
   
   def create
@@ -44,7 +57,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_url
-    flash[:danger] = "ユーザーを削除しました。"
+    flash[:success] = "ユーザーを削除しました。"
   end
 
   # beforeフィルター

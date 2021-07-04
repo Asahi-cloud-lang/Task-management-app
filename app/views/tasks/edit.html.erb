@@ -3,8 +3,13 @@
     <%= form_tag task_update_path, method: :post do %>
       <div class="form">
         <div class="form-body">
-          <% @task.errors.full_messages.each do |message| %>
-           <div class="form-error"><%= message %></div>
+          <% if @task.errors.any? %>
+            <div class="alert alert-danger">
+              入力エラーが<%= @task.errors.count %>件ありました。
+            </div>
+            <% @task.errors.full_messages.each do |message| %>
+              <div class="form-error"><%= message %></div>
+            <% end %>
           <% end %>
           <p>名称</p>
           <input name="work" class="work-form" value="<%= @task.work %>" > 

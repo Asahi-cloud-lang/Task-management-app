@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
   include SessionsHelper
   before_action :logged_in_user, only: [:index, :new, :show]
-  before_action :admin_or_correct_user, only: [:edit, :update, :show]
+  before_action :admin_or_correct_user, only: [:edit, :update, :show, :edit]
     
     def index
-      @tasks = Task.all
+      @tasks = Task.paginate(page: params[:page], per_page: 20).order(created_at: :desc)
     end
     
     def new
@@ -47,15 +47,22 @@ class TasksController < ApplicationController
       @task = Task.find(params[:task_id])
       @task.destroy
       redirect_to task_index_url
-      flash[:danger] = "タスクを削除しました。"
+      flash[:success] = "タスクを削除しました。"
     end
     
   def admin_or_correct_user
     @user = User.find(params[:id]) if @user.blank?
+    @task = Task.find(params[:task_id]) if @task.blank?
     @current_user = User.find(session[:user_id])
     unless @current_user.id == @user.id || @current_user.admin?
       redirect_to(root_url)
       flash[:danger] = "権限がありません。"
+    end
+    if @task.user_id
+     unless @task.user_id == @user.id
+      redirect_to(root_url)
+      flash[:danger] = "権限がありません。"
+     end
     end
   end
   

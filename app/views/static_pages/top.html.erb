@@ -6,7 +6,15 @@
       <h1 class="top-title">Task App</h1>
       <p class="center">TaskAppは簡易ToDo管理ツールです。</p>
       <center>
-        <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
+          <% else %>
+            <p class="login-ban2">アカウント作成</p>
+          <% end %>
+        <% else %>
+          <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
+        <% end %>
       </center>
     </div>
 
@@ -27,7 +35,7 @@
         <span>ログイン情報を記憶する</span>
         <% end %>
         <% if logged_in? %>
-          <p class="btn btn-primary btn-block btn-login">ログイン状態です</p>
+          <p class="login-ban">ログイン状態です</p>
         <% else %>
           <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-login" %>
           <p>ユーザー登録がまだの場合は<%= link_to "こちら", signup_path %></p>

@@ -17,10 +17,14 @@
     </td>
     <td>
       <% if current_user.admin? %>
-        <%= link_to "削除", user_path(user.id), method: :delete,
-        class: "user_delete_button",
-        data: { confirm: "削除してよろしいですか？" }
-        %>
+        <% if !user.admin? %>
+          <%= link_to "削除", user_path(user.id), method: :delete,
+          class: "user_delete_button",
+          data: { confirm: '本当に削除して良いですか?',
+                  cancel: 'やめる',
+                  commit: '削除する'},
+                  title: '削除確認' %>
+        <% end %>
       <% end %>
     </td>
   </tr>
